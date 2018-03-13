@@ -13,11 +13,9 @@ ubills = 0
 total_bills = 0
 
 bills={'rent':1100, 'internet': 45, 'dramafever': 10, 'car': 465, 'utilities': 225, 'phones': 345, 'netflix': 14}
-extras=['gcc', 'paypal', 'j_phone', 'g_phone', 'a_phone', 'v_phone', 'p_training', 'p_boarding']
+extras={'gcc':6000, 'paypal':4000, }
 
-f= ['rent', 'internet']
-s=[]
-t=[]
+beginning = ['rent', 'internet']
 
 for line in fileinput.input():
     bill, amount = line.split()
