@@ -33,3 +33,6 @@ with open('bills.json', 'r') as handle:
     parsed = json.load(handle)
     parsed['car'] == 450
     print(parsed['car'])
+with open('temp.json', 'r') as handle:
+    parsed = json.load(handle)
+    print(parsed)
