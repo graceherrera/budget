@@ -1,1 +1,1 @@
-{"rent": 1100, "internet": 45, "dramafever": 10, "car": 465, "utilities": 225, "phones": 345, "netflix": 14}
+bills={'rent':1100, 'internet': 45, 'dramafever': 10, 'car': 465, 'utilities': 225, 'phones': 345, 'netflix': 14, 'hbo': 15}

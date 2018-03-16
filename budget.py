@@ -6,7 +6,7 @@ import time
 import datetime
 from datetime import date
 
-income = 2500
+income = 2429.84
 leftover = 0
 rbills = 0
 ebills = 0
