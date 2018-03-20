@@ -6,7 +6,7 @@ import time
 import datetime
 from datetime import date
 
-schedules={'rent': 1, 'internet': 5, 'dramafever': 9, 'car': 22, 'utilities': 23, 'phones': 11, 'netflix': 14, 'HBO':17, 'gcc':15}
+schedules={'rent': 1, 'internet': 5, 'dramafever': 9, 'car': 22, 'utilities': 23, 'phones': 11, 'netflix': 14, 'HBO':17, 'gcc':15, 'spotify': 24}
 
 now = datetime.date.today()
 today = str(now)
