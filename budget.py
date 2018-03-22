@@ -38,6 +38,7 @@ with open('bills.json', 'r') as f:
 
 with open(report_name, 'w') as report:
     print(report_name, '\n', file=report)
+    print('Your total income with paycheck and balance is {}'.format(income), file=report)
     for line in fileinput.input():
         bill, amount = line.split()
         if bill in bills:
