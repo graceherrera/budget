@@ -7,7 +7,7 @@ import datetime
 from datetime import date
 import json
 
-income = 2429.84
+income = 0
 leftover = 0
 rbills = 0
 ebills = 0
@@ -17,6 +17,13 @@ total_bills = 0
 bills={}
 extras={}
 temp={}
+bank=0
+paycheck=0
+print('What was your paycheck amount?')
+paycheck=float(input())
+print('What was your checking balance?')
+bank=float(input())
+income = bank + paycheck
 
 now = datetime.date.today()
 report_name = 'BReport ' + str(now)
