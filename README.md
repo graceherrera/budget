@@ -2,7 +2,8 @@ Budget program will ask for the current paycheck that you are applying to this s
 
 The program reads in a file with list of bills and amounts. It compares the bills to a set of dictionaries some of which get updated with new balances after some of the debt is paid off.
 
-### budget.py reads in file with date on it
+### budget.py 
+  reads in file with date on it
   reads extra.json -- current debt that we are working to pay off. populates the extras dictionary
   reads bills.json -- current list of bills with static balances. populates the bills dictionary.
   writes out the report named after the current date.
