@@ -5,11 +5,15 @@ import fileinput
 import time
 import datetime
 from datetime import date
+import json
 
-schedules={'rent': 1, 'internet': 5, 'dramafever': 9, 'car': 22, 'utilities': 23, 'phones': 11, 'netflix': 14, 'HBO':17, 'gcc':15, 'spotify': 24}
+schedules={}
+with open('schedules.json', 'r') as f:
+    schedules = json.load(f)
 
 now = datetime.date.today()
 today = str(now)
+month = today[5] + today[6]
 day = today[8] + today[9]
 day_num = int(day)
 
@@ -24,9 +28,21 @@ with open(report_name, 'a') as report:
         if bill in schedules:
             if schedules[bill] < day_num:
                 late = day_num - schedules[bill]
-                print('Has this bill: {}, been paid already? If not it is {} days late.'.format(bill, late), file=report)
+                print('The bill: {}, was due on {}/{} are you paying the next months bill? If not it is {} days late.'.format(bill,month,   schedules[bill], late), file=report)
             else:
                 early = schedules[bill] - day_num
-                print('Yay you are {} days early paying {}'.format(early, bill), file=report)
+                print('You are {} days early paying {}'.format(early, bill), file=report)
         else:
             print('The bill: {} is not in your scheduled bills? Do you need to add it?'.format(bill), file=report)
+    print('These are the bills that should have been paid by now:', file=report)
+    for key, value in schedules.items():
+        if value < day_num:
+            print(key, value, file=report)
+    print('These are the upcoming bills:', file=report)
+    for key, value in schedules.items():
+        if value > day_num:
+            print(key, value, file=report)
+    print('These bills are due now!:', file=report)
+    for key, value in schedules.items():
+        if value == day_num:
+            print(key, value, file=report)

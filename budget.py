@@ -27,7 +27,7 @@ income = bank + paycheck
 
 now = datetime.date.today()
 report_name = 'BReport ' + str(now)
-print ('Your report: {} should now be ready to read'.format(report_name))
+print ('Your report: {} needs the scheduled bills. Please run schedules.py'.format(report_name))
 
 with open('extra.json', 'r') as f:
     temp = json.load(f)
