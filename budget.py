@@ -44,7 +44,7 @@ with open(report_name, 'w') as report:
         if bill in bills:
             rbills += float(amount)
             if float(bills[bill]) != float(amount):
-                print('{} is budgeted for ${} and the bill is actually ${}. You saved ${}'.format(bill, bills[bill], amount, float(bills[bill])- float(amount)), file=report)
+                print('{} is budgeted for ${} and the bill is actually ${}. You saved ${}. Should you reassess the balance assigned to this bill.'.format(bill, bills[bill], amount, float(bills[bill])- float(amount)), file=report)
         elif bill in extras:
             ebills += float(amount)
             if float(extras[bill]) != float(amount):
