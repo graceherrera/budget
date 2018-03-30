@@ -45,12 +45,16 @@ with open(report_name, 'w') as report:
             rbills += float(amount)
             if float(bills[bill]) != float(amount):
                 print('{} is budgeted for ${} and the bill is actually ${}. You saved ${}. Should you reassess the balance assigned to this bill.'.format(bill, bills[bill], amount, float(bills[bill])- float(amount)), file=report)
+            else:
+                print('You are paying or have paid the following bills: {}: ${}'.format(bill, amount), file=report)
         elif bill in extras:
             ebills += float(amount)
             if float(extras[bill]) != float(amount):
                 print('The amount you owe for {} is ${}. You have made a payment for ${}. Your new balance is {}'.format(bill, extras[bill], amount, float(extras[bill])- float(amount)), file=report)
                 new_balance = float(extras[bill]) - float(amount)
                 extras.update({bill: new_balance})
+            else:
+                print('You are paying or have paid the following bills: {}: ${}'.format(bill, amount), file=report)
         else:
             print('You have an unaccounted for bill: {} ${}'.format(bill, amount), file=report)
             ubills += float(amount)
@@ -59,5 +63,6 @@ with open(report_name, 'w') as report:
     print('The total extra bills this pay period are: ${}'.format(ebills), file=report)
     print('The total unaccounted for bills this pay period are: ${}'.format(ubills), file=report)
     print('The total bills for this period are {}. You have leftover {}'.format(total_bills, leftover), file=report)
+
 with open('extra.json', 'w') as f:
     json.dump(extras, f)
