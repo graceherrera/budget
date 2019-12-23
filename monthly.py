@@ -38,6 +38,8 @@ with open(report_name, 'w') as report:
 	report.write(name)
 	report.write('\nThe total spent this month is {}\n'.format(total))
 	report.write("\n".join("{}\t{}".format(k, v) for k, v in ctgs.items()))
+	report.write('\nChecking {}'.format(checking))
+	report.write('\nCredit {}'.format(credit))
 	report.write('\nThe total spent from checking account is {}'.format(checking))
 	report.write('\nThe total spent from credit cards is {}'.format(credit))
 	
